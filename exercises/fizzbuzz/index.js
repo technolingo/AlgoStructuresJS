@@ -12,6 +12,36 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+// function fizzBuzz (n) {
+//   for (var i = 1; i <= n; i++) {
+//     if (i === 0) {} else {
+//       if (i % 3 === 0 && i % 5 === 0) {
+//         console.log('fizzbuzz');
+//       } else if (i % 3 === 0) {
+//         console.log('fizz');
+//       } else if (i % 5 === 0) {
+//         console.log('buzz');
+//       } else {
+//         console.log(i);
+//       }
+//     }
+//   }
+// }
+
+const fizzBuzz = n => {
+  for (let num of Array(n + 1).keys()) {
+    if (num === 0) {} else {
+      if (num % 3 === 0 && num % 5 === 0) {
+        console.log('fizzbuzz');
+      } else if (num % 3 === 0) {
+        console.log('fizz');
+      } else if (num % 5 === 0) {
+        console.log('buzz');
+      } else {
+        console.log(num);
+      }
+    }
+  }
+}
 
 module.exports = fizzBuzz;
