@@ -14,7 +14,7 @@
 //       ' ### '
 //       '#####'
 
-// patern analysis
+// pattern analysis
 //       '  #  '
 //       ' ### '
 //       '#####'
