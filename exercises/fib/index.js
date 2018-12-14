@@ -22,20 +22,25 @@
 // };
 
 // recersion w/ memoization
-const fib = n => {
-  const memo = {};
-
-  if (n <= 0) {
-    return 0;
-  } else if (n <= 2) {
-    return 1;
-  } else if (memo[n] !== undefined) {
-    return memo[n];
-  } else {
-    const result = fib(n - 1) + fib(n - 2);
-    memo[n] = result;
-    return result;
+const slowFib = n => {
+  if (n < 2) {
+    return n;
   }
+  return fib(n - 1) + fib(n - 2);
 };
+
+const memoize = fn => {
+  const memo = {};
+  return (...args) => {
+    if (memo[args]) {
+      return memo[args];
+    }
+    const result = fn.apply(this, args);
+    memo[args] = result;
+    return result;
+  };
+};
+
+const fib = memoize(slowFib);
 
 module.exports = fib;
