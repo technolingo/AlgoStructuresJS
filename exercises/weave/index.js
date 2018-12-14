@@ -7,6 +7,7 @@
 // of the two queues.  The function should handle
 // queues of different lengths without inserting
 // 'undefined' into the new one.
+// The first element in the first queue goes first.
 // *Do not* access the array inside of any queue, only
 // use the 'add', 'remove', and 'peek' functions.
 // --- Example
@@ -24,6 +25,19 @@
 
 const Queue = require('./queue');
 
-function weave(sourceOne, sourceTwo) {}
+const weave = (sourceOne, sourceTwo) => {
+  const combined = new Queue();
+
+  while (sourceOne.peek() || sourceTwo.peek()) {
+    if (sourceOne.peek()) {
+      combined.add(sourceOne.remove());
+    }
+    if (sourceTwo.peek()) {
+      combined.add(sourceTwo.remove());
+    }
+  }
+
+  return combined;
+};
 
 module.exports = weave;
