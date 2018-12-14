@@ -1,15 +1,12 @@
-#!/usr/bin/env python3
-
-
-class Queue:
+class Stack:
 
     def __init__(self):
         self.data = []
 
-    def enqueue(self, elem):
-        self.data.insert(0, elem)
+    def push(self, elem):
+        self.data.append(elem)
 
-    def dequeue(self):
+    def pop(self):
         try:
             return self.data.pop()
         except:

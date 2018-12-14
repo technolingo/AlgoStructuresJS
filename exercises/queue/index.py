@@ -7,7 +7,10 @@ class Queue:
         self.lst.insert(0, elem)
 
     def dequeue(self):
-        return self.lst.pop()
+        try:
+            return self.lst.pop()
+        except:
+            return None
 
     def __repr__(self):
         return str(self.lst)
