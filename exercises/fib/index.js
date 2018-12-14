@@ -8,6 +8,34 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// // iterative solution
+// const fib = n => {
+//   const array = [0, 1, 1];
+//   if (n > 2) {
+//     for (let i = 3; i <= n; i++) {
+//       const a = array[array.length - 1];
+//       const b = array[array.length - 2];
+//       array.push(a + b);
+//     }
+//   }
+//   return array[n];
+// };
+
+// recersion w/ memoization
+const fib = n => {
+  const memo = {};
+
+  if (n <= 0) {
+    return 0;
+  } else if (n <= 2) {
+    return 1;
+  } else if (memo[n] !== undefined) {
+    return memo[n];
+  } else {
+    const result = fib(n - 1) + fib(n - 2);
+    memo[n] = result;
+    return result;
+  }
+};
 
 module.exports = fib;
