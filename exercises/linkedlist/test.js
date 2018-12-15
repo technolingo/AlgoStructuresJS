@@ -44,6 +44,7 @@ describe('Size', () => {
 describe('GetFirst', () => {
   test('returns the first element', () => {
     const l = new List();
+    expect(l.getFirst()).toEqual(null);
     l.insertFirst(1);
     expect(l.getFirst().data).toEqual(1);
     l.insertFirst(2);
