@@ -11,15 +11,27 @@
 //    fromLast(list, 2).data // 'b'
 
 const fromLast = (list, n) => {
-  const chain = '.next'.repeat(n + 1);
-  const expString = '!node' + chain + ';';
-  let node = list.getFirst();
-  while (node) {
-    if (eval(expString)) {
-      return node;
-    }
-    node = node.next;
+  // const chain = '.next'.repeat(n + 1);
+  // const expString = '!node' + chain + ';';
+  // let node = list.getFirst();
+  // while (node) {
+  //   if (eval(expString)) {
+  //     return node;
+  //   }
+  //   node = node.next;
+  // }
+
+  let slow = list.getFirst();
+  let fast = list.getFirst();
+  while (n > 0) {
+    fast = fast.next;
+    n--;
   }
+  while (fast.next) {
+    slow = slow.next;
+    fast = fast.next;
+  }
+  return slow;
 };
 
 module.exports = fromLast;
