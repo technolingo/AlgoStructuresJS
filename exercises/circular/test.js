@@ -38,8 +38,8 @@ test('circular detects circular linked lists linked at the head', () => {
 test('circular detects non-circular linked lists', () => {
   const l = new List();
   const a = new Node('a');
-  const b = new Node('b');
-  const c = new Node('c');
+  const b = new Node('a');
+  const c = new Node('a');
 
   l.head = a;
   a.next = b;
