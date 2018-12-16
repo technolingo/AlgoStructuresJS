@@ -1,8 +1,7 @@
 // --- Directions
-// Given a linked list, return the element n spaces
-// from the last node in the list.  Do not call the 'size'
-// method of the linked list.  Assume that n will always
-// be less than the length of the list.
+// Given a linked list, return the n-th element counting from the tail.
+// * Do not call the 'size' method of the linked list.
+// Assume that n is less than the length of the list.
 // --- Examples
 //    const list = new List();
 //    list.insertLast('a');
@@ -11,6 +10,16 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+const fromLast = (list, n) => {
+  const chain = '.next'.repeat(n + 1);
+  const expString = '!node' + chain + ';';
+  let node = list.getFirst();
+  while (node) {
+    if (eval(expString)) {
+      return node;
+    }
+    node = node.next;
+  }
+};
 
 module.exports = fromLast;
