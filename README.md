@@ -1,1 +1,1 @@
-Algorithms and Data Structures Exercises in both JavaScript & Python
+Common Algorithms and Data Structures Implemented in both JavaScript & Python
