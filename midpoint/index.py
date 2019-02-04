@@ -1,6 +1,3 @@
-from linkedlist import LinkedList
-
-
 def midpoint(llst):
     '''find the midpoint node without using size() or a counter variable'''
     if llst.get_first() is None:
